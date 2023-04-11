@@ -1,0 +1,164 @@
+## **Character Set**
+
+---
+
+- Character 집합
+
+## **Unicode**
+
+---
+
+- 저장하는 방법을 Encoding 이라고 함
+
+## **VARCHAR2**
+
+---
+
+- 기본 Character Set 기준
+
+---
+
+## **AVG**
+
+---
+
+- NULL 조심
+
+## 기타
+
+---
+
+- **COUNT(*) = ROW의 개수**
+- **GROUPING 함수 = NULL 값 제외**
+- WHERE 에 아무것도 없으면 **무조건JOIN**
+
+```sql
+SELECT COUNT(*)
+	,COUNT(NO)
+	,COUNT(NO1)
+	,SUM(NO1)
+	,AVG(NO1)
+	,SUM(NO1)/COUNT(NO1)
+	,SUM(NO1)/COUNT(NO)
+FROM (
+SELECT
+	ROWNUM NO
+	,DECODE(MOD(ROWNUM,3),0,NULL,ROWNUM) NO1
+FROM DUAL
+CONNECT BY LEVEL <= 7
+)
+```
+
+### FROM 절을 한번만 쓰면 좋은 이유
+
+---
+
+= RAM에 올려놓은걸 재사용하면 빠름 
+
+⇒ HDD는 느림
+
+```sql
+SELECT NAME
+	,CLASS
+	,KOR
+	,ENG
+	,MAT
+FROM EXAM_RSLT
+UNION ALL
+SELECT '총계'
+	,NULL
+	,SUM(KOR)
+	,SUM(ENG)
+	,SUM(MAT)
+FROM EXAM_RSLT
+;
+
+SELECT NAME
+	,CLASS
+	,KOR
+	,ENG
+	,MAT
+FROM EXAM_RSLT
+;
+
+SELECT DECODE(NO,1,NAME,'총계') NAME
+	,MIN(DECODE(NO,1,CLASS,NULL)) CLASS
+	,SUM(KOR)
+	,SUM(ENG)
+	,SUM(MAT)
+FROM EXAM_RSLT A,
+	(SELECT ROWNUM NO
+	FROM DUAL
+	CONNECT BY LEVEL <= 2
+	)
+GROUP BY DECODE(NO,1,NAME,'총계')
+ORDER BY MIN(NO)
+;
+```
+
+```sql
+SELECT
+	DECODE(NO,1,NAME,2,CLASS,3,'TOT') NAME
+	,SUM(KOR) KOR
+	,SUM(ENG) ENG
+	,SUM(MAT) MAT
+	,SUM(KOR+ENG+MAT) TOT
+FROM EXAM_RSLT,
+	(
+		SELECT ROWNUM NO
+		FROM DUAL
+		CONNECT BY LEVEL <= 3
+	)
+GROUP BY DECODE(NO,1,NAME,2,CLASS,3,'TOT')
+ORDER BY MIN(NO)
+;
+```
+
+## **ROLLUP( )**
+
+---
+
+- GROUP BY 를 N+1 개 만들어줌
+- GROPING( ) 에 넣으면 0 OR 1 로 나옴
+
+## **CUBE( )**
+
+---
+
+- GROUP BY 를 2에 N제곱개 만들어줌
+
+## SQL 활용 QUIZ 3
+
+---
+
+```sql
+SELECT * FROM ORG_TBL ORDER BY NO,ST_DT;
+
+SELECT 
+	NO
+	,MIN(SS)
+	,MIN(EE)
+	,MIN(NM)
+FROM (
+	SELECT 
+		NO
+		,SS
+		,EE
+		,NM
+		,SUM(FF) OVER(PARTITION BY NO ORDER BY NO,ST_DT) FF
+	FROM (
+		SELECT
+			NO
+			,ST_DT
+			,DECODE(ST_DT,LAG(ET_DT) OVER(PARTITION BY NM ORDER BY NO,ST_DT),NULL,ST_DT) SS
+			,DECODE(ET_DT,LEAD(ST_DT) OVER(PARTITION BY NM ORDER BY NO,ST_DT),NULL,ET_DT) EE
+			,DECODE(ST_DT,LAG(ET_DT) OVER(PARTITION BY NM ORDER BY NO,ST_DT),0,1) FF
+			,NM
+		FROM ORG_TBL	
+	)
+	ORDER BY NO,ST_DT
+)
+GROUP BY NO,FF
+ORDER BY MIN(SS)
+;
+```
