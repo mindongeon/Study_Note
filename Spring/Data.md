@@ -12,7 +12,7 @@
     - 넘어오는 변수명과 파라미터 변수명이 같은 경우 생략 가능
 2. 메소드에 선언
     - View에서 사용할 데이터를 설정하는 용도
-    - @RequestMapping이 적용된 메소드보다 먼저 호출
+    - `@RequestMapping`이 적용된 메소드보다 먼저 호출
     - 리턴되는 객체는 자동으로 Model에 저장
 
 ### @RequestParam
@@ -38,7 +38,7 @@
 
 ---
 
-- “;”로 구분함
+- “`;`”로 구분함
 - key=value 값 형태로 사용
 - PathVariable과 함께 사용 가능
 
@@ -98,8 +98,8 @@
 ---
 
 - 컨트롤러 메소드에서 특정 조건에 맞는 파라미터가 있을 때 원하는 값을 바인딩 해줌
-- @RequestBody를 사용해 request의 body값,
-@PathVariable를 사용해 request의 path parameter 값을 가져 와줌
+- `@RequestBody`를 사용해 request의 body값,
+`@PathVariable`를 사용해 request의 path parameter 값을 가져 와줌
 
 ### ArgumentResolver
 

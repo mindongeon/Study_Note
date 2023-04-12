@@ -10,7 +10,7 @@
     - [3.3.2. JDK Dynamic Proxy VS CGLIB Proxy](#332-jdk-dynamic-proxy-vs-cglib-proxy)
 
 
-# 2. Spring AOP
+# 2. [Spring AOP](/Spring/AOP.md)
 
 객체 지향인 OOP를 보완하기 위해 Spring에서 제공함
 
@@ -28,7 +28,7 @@ Spring에서는 기본적으로 두가지 방식을 통해 AOP를 제공함
 
 ## 3.1. JDK Dynamic Proxy
 
-- Reflection을 통해 동적으로 Proxy 객체 생성
+- [Reflection](/Java/Reflection.md)을 통해 동적으로 [Proxy](/Java/Dynamic%20Proxy.md) 객체 생성
 - **interface**를 기준으로 Proxy 생성
 - JDK Dynamic Proxy 의 핵심 : **InvocationHandler**
 
@@ -47,7 +47,7 @@ Spring에서는 기본적으로 두가지 방식을 통해 AOP를 제공함
 
 ---
 
-- Spring `@Configuration` 클래스는 등록된 Bean을 [싱글톤](/Design%20Pattern/Singleton%20Pattern.md)으로 등록함
+- Spring [@Configuration](/Spring/A.Configuraion.md) 클래스는 등록된 Bean을 [싱글톤](/Design%20Pattern/Singleton%20Pattern.md)으로 등록함
 - Spring이 `@Configuration` 클래스 주위에 CGLIB 프록시를 생성함
 - 해당 Bean을 호출하게 되면 새로운 빈을 생성하기 전에
 - 해당 Bean이 존재하는지 확인하고 존재한다면

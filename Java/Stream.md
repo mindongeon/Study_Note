@@ -4,27 +4,27 @@
 - [2. Stream](#2-stream)
 - [3. Stream 이란](#3-stream-이란)
 - [4. 생성](#4-생성)
-  - [4.1. 배열 / 컬렉션 / 빈 스트림](#41-배열--컬렉션--빈-스트림)
-  - [4.2. Stream.builder() / Stream.generate() / Stream.iterate()](#42-streambuilder--streamgenerate--streamiterate)
-  - [4.3. 기본 타입형 / String / 파일 스트림](#43-기본-타입형--string--파일-스트림)
-  - [4.4. 병렬 스트림 / 스트림 연결하기](#44-병렬-스트림--스트림-연결하기)
+	- [4.1. 배열 / 컬렉션 / 빈 스트림](#41-배열--컬렉션--빈-스트림)
+	- [4.2. Stream.builder() / Stream.generate() / Stream.iterate()](#42-streambuilder--streamgenerate--streamiterate)
+	- [4.3. 기본 타입형 / String / 파일 스트림](#43-기본-타입형--string--파일-스트림)
+	- [4.4. 병렬 스트림 / 스트림 연결하기](#44-병렬-스트림--스트림-연결하기)
 - [5. 중간 연산](#5-중간-연산)
-  - [5.1. Filtering](#51-filtering)
-  - [5.2. Mapping](#52-mapping)
-  - [5.3. Sorting](#53-sorting)
-  - [5.4. Iterating](#54-iterating)
+	- [5.1. Filtering](#51-filtering)
+	- [5.2. Mapping](#52-mapping)
+	- [5.3. Sorting](#53-sorting)
+	- [5.4. Iterating](#54-iterating)
 - [6. 최종 연산](#6-최종-연산)
-  - [6.1. Calcurating](#61-calcurating)
-  - [6.2. Reduction](#62-reduction)
-  - [6.3. Collecting](#63-collecting)
-  - [6.4. Matching](#64-matching)
-  - [6.5. Iterating](#65-iterating)
+	- [6.1. Calcurating](#61-calcurating)
+	- [6.2. Reduction](#62-reduction)
+	- [6.3. Collecting](#63-collecting)
+	- [6.4. Matching](#64-matching)
+	- [6.5. Iterating](#65-iterating)
 
 
 # 2. Stream
 
 ```
-💡 **데이터를 추상화하여 다루므로, 다양한 방식으로 저장된 데이터를 읽고 쓰기 위한 공통된 방법을 제공**
+💡 데이터를 추상화하여 다루므로, 다양한 방식으로 저장된 데이터를 읽고 쓰기 위한 공통된 방법을 제공
 ```
 
 # 3. Stream 이란

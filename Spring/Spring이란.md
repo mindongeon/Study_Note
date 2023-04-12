@@ -1,4 +1,4 @@
-Toby Spring
+# Toby Spring
 
 ```
 💡 Java Enterprise Application 개발에 사용되는 Application Framework.
@@ -8,7 +8,7 @@ Application Framework는 Application 개발을 빠르고 효율적으로 할 수
 # Application의 기본 틀 - Spring Container
 
 
-1. Spring은 Spring Container 또는 Application Context라고 불리는 Spring Runtime Engine을 제공한다.
+1. Spring은 [Spring Container](/Spring/Spring%20Container.md) 또는 Application Context라고 불리는 Spring Runtime Engine을 제공한다.
 2. Spring Container는 설정정보를 참고, Application을 구성하는 Object를 생성, 관리한다.
 3. Spring Container는 독립적으로 동작 가능하지만, 보통 웹 모듈에서 동작하는 서비스나 서블릿을 등록해 사용한다.
 4. Spring을 사용하려면 먼저 Spring Container를 다루는 방법, Spring Container가 Application Object를 이용할 수 있도록 설정정보를 작성하는 방법을 알아야한다.
@@ -30,7 +30,7 @@ Application Framework는 Application 개발을 빠르고 효율적으로 할 수
 
 - Object의 생명주기, 의존관계에 대한 프로그래밍 모델이다.
 - 유연하고 확장성이 뛰어난 코드를 만들 수 있게 도와주는 객체 지향 설계 원칙과 디자인 패턴의 핵심 원리를 담고 있다.
-- Spring이 직접 제공하는 모든 기술과 API, 컨테이너는 IoC/DI 방식으로 작성되어 있다.
+- Spring이 직접 제공하는 모든 기술과 API, 컨테이너는 [IoC](/Spring/IoC.md)/DI 방식으로 작성되어 있다.
 
 ### 2. 서비스 추상화
 
@@ -44,7 +44,7 @@ Application Framework는 Application 개발을 빠르고 효율적으로 할 수
 ---
 
 - Application Code에 산재해서 나타나는 부가적인 기능을 독립적으로 모듈화하는 프로그래밍 모델이다.
-- Spring은 AOP를 이용해, 다양한 엔터프라이즈 서비스를 적용하고도 깔끔한 코드를 유지할 수 있게 해준다.
+- Spring은 [AOP](/Spring/AOP.md)를 이용해, 다양한 엔터프라이즈 서비스를 적용하고도 깔끔한 코드를 유지할 수 있게 해준다.
 
 ## 기술 API
 

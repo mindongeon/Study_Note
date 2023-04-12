@@ -17,7 +17,7 @@
     
     ⇒ `static` 인 멤버들만 가지고 있음 ⇒ 객체가 생성될 일이 없음
     
-- 클래스가 *Singleton*일 경우
+- 클래스가 [*Singleton*](/Design%20Pattern/Singleton%20Pattern.md)일 경우
     
     ⇒ 현재 실행되는 프로그램에 해당 클래스 변수는 하나만 존재할 경우
     

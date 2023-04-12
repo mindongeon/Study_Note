@@ -1,10 +1,12 @@
-Toby Spring
+# Toby Spring
 # 1. 목차
 
+- [Toby Spring](#toby-spring)
 - [1. 목차](#1-목차)
 - [2. Controller](#2-controller)
 - [3. Controller의 종류와 Handler Adapter](#3-controller의-종류와-handler-adapter)
   - [3.1. Servlet과 SimpleServletHandlerAdapter](#31-servlet과-simpleservlethandleradapter)
+    - [장점](#장점)
   - [3.2. HttpRequestHandler와 HttpRequestHandlerAdapter](#32-httprequesthandler와-httprequesthandleradapter)
   - [3.3. Controller와 SimpleControllerHandlerAdapter](#33-controller와-simplecontrollerhandleradapter)
   - [3.4. AbstractController가 제공하는 추가 기능](#34-abstractcontroller가-제공하는-추가-기능)
@@ -53,8 +55,8 @@ Toby Spring
     ⇒ HttpServletResponse의 정보를 확인하는 방법 사용
     
 
-**장점**
-
+### 장점
+---
 - Servlet Class 코드를 그대로 유지 → Spring Bean 등록 가능
 
 ## 3.2. HttpRequestHandler와 HttpRequestHandlerAdapter

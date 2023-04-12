@@ -35,7 +35,7 @@ Toby Spring
 # 2. @Controller
 
 
-DefaultAnnotationHandlerMapping : 컨트롤러 빈의 메소드에 매핑
+DefaultAnnotationHandlerMapping : [컨트롤러](/Spring/Controller.md) 빈의 메소드에 매핑
 
 AnnotationMethodHandlerAdapter : 매핑된 메소드를 호출
 
@@ -62,20 +62,20 @@ AnnotationMethodHandlerAdapter : 매핑된 메소드를 호출
 
 ### 3.1.3. Locale
 
-- java.util.Locale 타입
+- `java.util.Locale` 타입
 - DispatcherServlet의 Locale Resolver가 결정한 Locale 오브젝트
 
 ### 3.1.4. InputStream, Reader
 
-- HttpServletRequest의 getInputStream()을 통해 받는 콘텐트 스트림 또는 Reader타입 오브젝트
+- HttpServletRequest의 `getInputStream()`을 통해 받는 콘텐트 스트림 또는 Reader타입 오브젝트
 
 ### 3.1.5. OutputStream, Writer
 
-- HttpServletResponse의 getOutputStream()으로 가져올 수 있는 출력용 콘텐트 스트림 또는 Writer타입 오브젝트
+- HttpServletResponse의 `getOutputStream()`으로 가져올 수 있는 출력용 콘텐트 스트림 또는 Writer타입 오브젝트
 
 ### 3.1.6. @PathVariable
 
-- @RequestMapping의 URL에 { } 로 들어가는 패스 변수 받기
+- `@RequestMapping`의 URL에 `{}` 로 들어가는 패스 변수 받기
 - 쿼리 스트링으로 보내는 대신 URL path로 풀어서 쓸 경우 사용
 
 ```java
@@ -95,13 +95,13 @@ public String lookup(
 ### 3.1.7. @RequestParam
 
 - 단일 HTTP 요청 파라미터를 메소드 파라미터에 넣어줌
-- 가져올 요청 파라미터의 이름을 @RequestParam 기본값으로 지정
+- 가져올 요청 파라미터의 이름을 `@RequestParam `기본값으로 지정
 
 ```java
 public String view(@RequestParam("id") int id) {...}
 ```
 
-- @RequestParam을 사용했다면 해당 파라미터가 반드시 있어야 함
+- `@RequestParam`을 사용했다면 해당 파라미터가 반드시 있어야 함
 - 원하지 않을시 다음과 같이 사용
 
 ```java
@@ -126,7 +126,7 @@ public String check(@CookieValue(value="auth",
 
 ### 3.1.9. @RequestHeader
 
-- 요청 헤더정보를 가져옴
+- 요청 [헤더](/Spring/Header.md)정보를 가져옴
 - 기본 값으로 가져올 HTTP 헤더의 이름을 지정
 
 ```java
@@ -140,26 +140,26 @@ public void header(@RequestHeader("Host") String host,
 ### 3.1.10. Map, Model, ModelMap
 
 - 다른 어노테이션이 없다면 위의 3가지 오브젝트 있음
-- Model, ModelMap은 addAttribue() 메소드 제공
+- Model, ModelMap은 `addAttribue()` 메소드 제공
 
 ### 3.1.11. @ModelAttribute
 
 - 메소드 파라미터, 메소드 레벨 적용 가능
 - 클라이언트로부터 컨트롤러가 받는 요청정보 중
-하나 이상의 갑승ㄹ 가진 오브젝트 형태로 만들 수 있는
+하나 이상의 값을 가진 오브젝트 형태로 만들 수 있는
 구조적인 정보
-- 메소드 파라미터에서 1:1로 받는 경우 @RequestParam
-- 도메인 오브젝트, DTO의 프로퍼티에 바인딩해서 한 번에 받는 경우 @ModelAttribute
+- 메소드 파라미터에서 1:1로 받는 경우 `@RequestParam`
+- 도메인 오브젝트, DTO의 프로퍼티에 바인딩해서 한 번에 받는 경우 `@ModelAttribute`
 - 컨트롤러가 리턴하는 모델에 파라미터로 전달한 오브젝트를 자동 추가
 
 ### 3.1.12. Errors, BindingResult
 
-- @RequestParam과 다르게 비어있는 값 또는 타입 변환에 실패해도 작업은 계속 진행됨
+- `@RequestParam`과 다르게 비어있는 값 또는 타입 변환에 실패해도 작업은 계속 진행됨
 - 메소드 파라미터에 맞게 요청정보를 추출해서 제공해주는 어댑터 핸들러는 실패한 변환 작업에 대한 정보를 컨트롤러에게 제공
 - 컨트롤러는 이런 정보를 참고해 적절한 에러 페이지 출력 또는 사용자가 폼을 다시 수정할 기회를 줘야함
 - Errors나 BindingResult 파라미터를 함께 사용하지 않으면 스프링은 요청 파라미터의 타입이나 값에 문제가 없도록 어플리케이션이 보장해준다고 생각함
 - 파라미터를 바인딩하다가 발생한 변환 오류와 모델 검증기를 통해 검증하는 중에 발견한 오류 저장됨
-- 반드시 @ModelAttribute 파라미터 뒤에 나와야 함
+- 반드시 `@ModelAttribute` 파라미터 뒤에 나와야 함
 
 ```java
 @RequestMapping(value="add", method=RequestMethod.POST)
@@ -187,7 +187,7 @@ public String add(@ModelAttribue User user,
 ### 3.1.16. @Valid
 
 - 모델 오브젝트를 검증하도록 지시하는 지시자
-- 보통 @ModelAttribute와 함께 사용
+- 보통 `@ModelAttribute`와 함께 사용
 
 # 4. 리턴 타입의 종류
 
@@ -205,7 +205,7 @@ public String add(@ModelAttribue User user,
 **@ModelAttribute 모델 오브젝트 또는 커멘드 오브젝트**
 
 - 기본적으로 모델 오브젝트의 이름은 파라미터 타입 이름을 따름
-- 이름을 직접 지정하고 싶다면 @ModelAttribute(”모델명”)
+- 이름을 직접 지정하고 싶다면 `@ModelAttribute(”모델명”)`
 
 ---
 
@@ -237,8 +237,8 @@ public String add(@ModelAttribue User user,
 **ModelAndView**
 
 - 컨트롤러가 리턴해야 하는 정보를 담고 있는 가장 대표적인 타입
-- @Controller에서는 다른 편리한 방법이 많아 자주 사용되지는 않음
-- Map/Model/ModelMap, @ModelAttribute메소드가 리넡하는 모델에 자동 추가됨
+- [`@Controller`](/Spring/A.Controller.md)에서는 다른 편리한 방법이 많아 자주 사용되지는 않음
+- Map/Model/ModelMap, `@ModelAttribute`메소드가 리넡하는 모델에 자동 추가됨
 
 ---
 
@@ -316,7 +316,7 @@ public void view(@RequestParam int id, Model model) {
 
 **@ResponseBody**
 
-- @RequestBody와 비슷한 방식으로 동작
+- `@RequestBody`와 비슷한 방식으로 동작
 - 메소드 레벨에 부여 시 메소드가 리턴하는 오브젝트는
 HTTP 응답의 메세지 본문으로 전환됨
 
@@ -348,14 +348,14 @@ public class UserController {
 }
 ```
 
-- 컨트롤러 메소드가 생성하는 모델 정보 중 @SessionAttributes에 지정한 이름과 동일한 것을 세션에 저장해줌
-- @ModelAttribute가 지정된 파라미터가 있을 시 세션에서 오브젝트를 가져옴
+- 컨트롤러 메소드가 생성하는 모델 정보 중 `@SessionAttributes`에 지정한 이름과 동일한 것을 세션에 저장해줌
+- `@ModelAttribute`가 지정된 파라미터가 있을 시 세션에서 오브젝트를 가져옴
 
 ## 5.2. SessionStatus
 
 ---
 
-- @SessionAttribute 사용시 더 이상 필요 없어지면 제거해줘야 함
+- `@SessionAttribute` 사용시 더 이상 필요 없어지면 제거해줘야 함
 
 ```java
 public String submit(SessionStatus ss) {
@@ -363,5 +363,5 @@ public String submit(SessionStatus ss) {
 }
 ```
 
-- sessionStatus.setComplete();
+- `sessionStatus.setComplete()`
 - 현재 컨트롤러에 의해 세션에 저장된 정보를 모두 제거

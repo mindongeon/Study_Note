@@ -23,7 +23,7 @@
 ---
 
 - Proxy를 직접 생성하지 않고 Runtime에 
-Interface를 구현하는 친구들을 만듦
+[Interface](/Java/Interface.md)를 구현하는 친구들을 만듦
 - Java의 `java.lang.reflect.Proxy` 에서 제공해주는 API를 
 이용해 사용 가능
 

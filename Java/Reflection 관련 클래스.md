@@ -1,6 +1,6 @@
 # Reflection 관련 클래스들
 
-자바 API에는 reflection이라는 패키지가 있다. 이 패키지에 있는 클래스들을 사용해 JVM에 로딩되어 있는 클래스와 메소드 정보를 읽어올 수 있다.
+자바 API에는 [reflection](/Java/Reflection.md)이라는 패키지가 있다. 이 패키지에 있는 클래스들을 사용해 JVM에 로딩되어 있는 클래스와 메소드 정보를 읽어올 수 있다.
 
 ## [Class 클래스](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html)
 ---

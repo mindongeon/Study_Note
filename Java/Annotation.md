@@ -40,7 +40,7 @@ Java의 정석
 | @Overide | 컴파일러에게 메소드를 오버라이딩하는 것이라고 말한다. |
 | @Deprecated | 앞으로 사용하지 않을 것을 권장하는 대상에 붙인다. |
 | @SuppressWarnings | 컴파일러의 특정 경고메시지가 나타나지 않게 해준다. |
-| @SafeVarargs | 제네릭스 타입의 가변인자에 사용한다. ( JDK 1.7 ) |
+| @SafeVarargs | [제네릭스](/Java/Generic.md) 타입의 가변인자에 사용한다. ( JDK 1.7 ) |
 | @FunctionalInterface | [함수형 인터페이스](/Java/Functional%20Interface.md)라는 것을 알린다. ( JDK 1.8 ) |
 | @Native | native메소드에서 참조되는 상수 앞에 붙인다. |
 
@@ -123,7 +123,7 @@ Annotation이 유지되는 기간을 지정하는데 사용된다.
     
 - RUNTIME
     
-    실행 시에 ‘reflection’을 통해 클래스 파일에 저장된 Annotation 정보를 읽어서 처리할 수 있다. `@FunctionalInterface`는 컴파일러가 체크해주는 Annotation이지만, 실행 시에도 사용되므로 ‘RUNTIME’으로 되어 있다.
+    실행 시에 ‘[reflection](/Java/Reflection.md)’을 통해 클래스 파일에 저장된 Annotation 정보를 읽어서 처리할 수 있다. `@FunctionalInterface`는 컴파일러가 체크해주는 Annotation이지만, 실행 시에도 사용되므로 ‘RUNTIME’으로 되어 있다.
     
 - CLASS
     
@@ -282,7 +282,7 @@ Annotation은 일반적인 인터페이스로 정의되어 있다.
 
 ---
 
-- 요소의 타입은 기본형, String, enum, Annotation, Class만 허용된다.
+- 요소의 타입은 기본형, String, [enum](/Java/enum.md), Annotation, Class만 허용된다.
 - `()` 안에 매개변수를 선언할 수 없다.
 - 예외를 선언할 수 없다.
 - 요소를 타입 매개변수로 정의할 수 없다.

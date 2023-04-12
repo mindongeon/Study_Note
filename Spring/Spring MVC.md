@@ -5,18 +5,18 @@
 ## @ExceptionHandler
 
 - 컨트롤러의 메소드 레벨에서 사용
-- 해당 컨트롤러에 해당하는 빈에서 @ExceptionHandler에 선언된 Excpetion 발생시 호출됨
+- 해당 컨트롤러에 해당하는 빈에서 `@ExceptionHandler`에 선언된 Excpetion 발생시 호출됨
 - 인자로 여러개의 Exception 받아서 처리
 - 여러 개의 Exception 설정 시 IOException.class 같은 포괄적인 명시보다 {FileSystemException.class, RemoteException.class}로 구체적인 명시 권장
 
 ## @ControllerAdvice
 
 - 클래스 레벨에서 사용
-- 모든 [@Controller](/Spring/%40Controller.md)에서 발생할 수 있는 Exception 처리
-- @ExceptionHandler와 함께 사용
-- @RestControllerAdvice = @ControllerAdvice + @ResponseBody
-- Exception 발생 시 응답으로 객체를 리턴해야 하는 경우 @RestControllerAdvice 사용
-- @ControllerAdvice만 사용해도 @RestController, @Controller의 Exception 처리 가능
+- 모든 [@Controller](/Spring/A.Controller.md)에서 발생할 수 있는 Exception 처리
+- `@ExceptionHandler`와 함께 사용
+- `@RestControllerAdvice` = `@ControllerAdvice` + `@ResponseBody`
+- Exception 발생 시 응답으로 객체를 리턴해야 하는 경우 `@RestControllerAdvice` 사용
+- `@ControllerAdvice`만 사용해도 @RestController, `@Controller`의 Exception 처리 가능
 
 # Redirect
 
@@ -33,7 +33,7 @@ Header의 content-type을 확인해서 가져옴
 
 ---
 
-@XmlRootElement : XML데이터를 해당 객체를 받고 싶을 때
+`@XmlRootElement` : XML데이터를 해당 객체를 받고 싶을 때
 
 ---
 

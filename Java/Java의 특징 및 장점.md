@@ -4,13 +4,13 @@
     
     이식성이란, 서로 다른 실행 환경의 시스템 간에 프로그램을 옮겨 실행할 수 있는 것
     
-2. 객체 지향 언어 ( OOP , Object Oriented Programming )
+2. [객체 지향 언어](/Java/%EA%B0%9D%EC%B2%B4%EC%99%80%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5.md) ( OOP , Object Oriented Programming )
     
     자바는 100% 객체 지향 언어로, 처음부터 객체를 고려해 설계됨
     
     캡슐화, 상속, 다형성을 완벽하게 지원
     
-3. 함수형 스타일 코딩
+3. [함수형](/Java/Functional%20Interface.md) 스타일 코딩
     
     대용량 데이터의 병렬 처리와 이벤트 지향 프로그래밍에 적합
     
@@ -26,7 +26,7 @@
     
     콘솔 프로그램, 서버용 웹 어플리케이션, 안드로이드 앱 등
     
-6. 멀티 쓰레드 ( Multi - Thread )
+6. 멀티 [쓰레드](/Java/Process%EC%99%80%20Thread.md) ( Multi - Thread )
     
     하나의 프로그램이 동시에 여러 작업을 처리하거나 대용량 작업을 빠르게
     

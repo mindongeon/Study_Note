@@ -2,18 +2,18 @@
 
 - [1. 목차](#1-목차)
 - [2. **Converter와 Formatter의 작동 원리**](#2-converter와-formatter의-작동-원리)
-  - [2.1. Converter](#21-converter)
-  - [2.2. Formatter](#22-formatter)
+	- [2.1. Converter](#21-converter)
+	- [2.2. Formatter](#22-formatter)
 - [3. PropertyEditor](#3-propertyeditor)
 - [4. Converter](#4-converter)
 - [5. Formatter](#5-formatter)
 - [6. ConversionService](#6-conversionservice)
 - [7. 예시 코드](#7-예시-코드)
-  - [7.1. @Before](#71-before)
-  - [7.2. primitive()](#72-primitive)
-  - [7.3. **andExpect( )**](#73-andexpect-)
-  - [7.4. valueOf()](#74-valueof)
-  - [7.5. custom()](#75-custom)
+	- [7.1. @Before](#71-before)
+	- [7.2. primitive()](#72-primitive)
+	- [7.3. **andExpect( )**](#73-andexpect-)
+	- [7.4. valueOf()](#74-valueof)
+	- [7.5. custom()](#75-custom)
 
 
 
@@ -86,7 +86,7 @@ public interface Parser<T> {
 - 변환 과정에서 메소드가 한 번만 호출됨
 - 멀티스레드 환경에서 안전하게 공유해서 사용 가능
 - PropertyEditor처럼 문자열과 오브젝트 사이의 상호 변환이라는 특화된 변환 작업보다 유연
-- 특화되어 있지 못해 불편하기도  함 ⇒ Formatter
+- 특화되어 있지 못해 불편하기도 함 ⇒ Formatter
 
 # 5. Formatter
 
@@ -97,7 +97,7 @@ public interface Parser<T> {
 - GenericConversionService에 직접 등록이 불가,
 - FormattingConversionService를 통해서만 적용 가능
 - FormattingConversionServiceFactoryBean을 사용시
-- 자동으로 @NumberFormat, @DateTimeFormat
+- 자동으로 `@NumberFormat`, `@DateTimeFormat`
 - 두가지 포맷터가 등록됨
 - 지역 정보를 사용하고 싶을 때 사용
 

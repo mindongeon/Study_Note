@@ -1,5 +1,5 @@
 ```
-💡 **WAS가 뜰때 한번만 사용**
+💡 WAS가 뜰때 한번만 사용
 ```
 
 - `@PostConstruct`는 WAS가 뜰 때 bean 생성 후 한번만 실행

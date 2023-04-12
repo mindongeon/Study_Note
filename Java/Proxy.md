@@ -3,7 +3,7 @@
 - [1. 목차](#1-목차)
 - [2. Proxy](#2-proxy)
   - [2.1. Proxy란](#21-proxy란)
-  - [2.2. Proxy Pattern](/Design%20Pattern/Proxy%20Pattern.md)
+  - [2.2. Proxy Pattern](#22-proxy-pattern)
   - [2.3. 예시](#23-예시)
     - [2.3.1. VO](#231-vo)
     - [2.3.2. Subject](#232-subject)
@@ -23,7 +23,7 @@
 
 - RealSubject는 자신의 기능에만 집중,
 그 이외 **부가 기능을 제공, 접근 제어 역할은 Proxy 객체에 위임**
-- SOLID 중 SRP를 지향하는 코드로 작성 가능
+- [SOLID](/Java/%EA%B0%9D%EC%B2%B4%EC%99%80%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5.md) 중 SRP를 지향하는 코드로 작성 가능
 
 ## 2.2. [Proxy Pattern](/Design%20Pattern/Proxy%20Pattern.md)
 
