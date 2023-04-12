@@ -88,3 +88,7 @@ a.call({a: 1})
 method는 메소드로만.
 
 arrow는 함수로만.
+
+## 같이보기
+---
+[Functional Interface](Functional%20Interface.md)

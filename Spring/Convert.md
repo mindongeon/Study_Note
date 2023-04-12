@@ -265,7 +265,7 @@ public final class SocialSecurityNumber {
 		return new SocialSecurityNumber(value);
 	}
 ```
-
+[정적팩토리메소드](/Design%20Pattern/Static%20Factory%20Method)
 ```java
 @Test
 	public void valueOf() throws Exception {

@@ -2,7 +2,7 @@ Name Property : 디버그 할 때 사용
 
 ---
 
-### **bind 함수**
+### bind 함수
 
 ```jsx
 function a () { }
@@ -26,7 +26,7 @@ b(3);
 
 ---
 
-### **new.target**
+### new.target
 
 new.target = new Person(1) 에서의 Person(1)
 
@@ -67,7 +67,7 @@ new.taget = new 다음의 녀석
 
 ---
 
-보통 arrow function 사용
+보통 [arrow function](/Javascript/Arrow%20Function.md) 사용
 
 객체 : 메소드 축약형 사용
 

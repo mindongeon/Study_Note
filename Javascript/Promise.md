@@ -1,20 +1,6 @@
-# 1. 목차
+# 소개
 
-- [1. 목차](#1-목차)
-- [2. 소개](#2-소개)
-  - [2.1. Callback Hell](#21-callback-hell)
-- [3. 상세](#3-상세)
-  - [3.1. Promise Status](#31-promise-status)
-  - [3.2. 문법](#32-문법)
-  - [3.3. 확장 Promise 만들기](#33-확장-promise-만들기)
-  - [3.4. Promise Chaning (then, catch에서 return)](#34-promise-chaning-then-catch에서-return)
-  - [3.5. Error Handling](#35-error-handling)
-  - [3.6. Multi Handling](#36-multi-handling)
-
-
-# 2. 소개
-
-## 2.1. Callback Hell
+## Callback Hell
 
 ---
 
@@ -34,11 +20,11 @@ step1(function(value1) {
 
 가독성을 위해 Promise를 사용하게 됨.
 
-# 3. 상세
+# 상세
 
 ---
 
-## 3.1. Promise Status
+## Promise Status
 
 ---
 
@@ -67,7 +53,7 @@ const a = testRun(true)
 const b = testRun(false)
 ```
 
-## 3.2. 문법
+## 문법
 
 ---
 
@@ -161,7 +147,7 @@ const b = testRun(false)
     ```
     
 
-## 3.3. 확장 Promise 만들기
+## 확장 Promise 만들기
 
 ---
 
@@ -199,7 +185,7 @@ const prom = Promise.resolve(thenable)
 prom.catch(err => { console.log(err) })
 ```
 
-## 3.4. Promise Chaning (then, catch에서 return)
+## Promise Chaning (then, catch에서 return)
 
 ---
 
@@ -246,7 +232,7 @@ new Promise((resolve, reject) => {
 4. `Promise.resolve()` or `Promise.reject()` : return 해주지 않는 이상 의미없음
 별개의 Promise객체가 생설될 뿐임
 
-## 3.5. Error Handling
+## Error Handling
 
 ---
 
@@ -262,7 +248,7 @@ asyncThing1()
 
 ![promise_chaining.png](/img/promise_chaining.png)
 
-## 3.6. Multi Handling
+## Multi Handling
 
 ---
 
