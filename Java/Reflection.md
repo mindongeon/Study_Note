@@ -1,19 +1,6 @@
-# 1. 목차
-- [1. 목차](#1-목차)
-- [2. Reflection](#2-reflection)
-  - [2.1. Java Reflection 정의](#21-java-reflection-정의)
-  - [2.2. `Java.lang.Class` 가져오는 3가지](#22-javalangclass-가져오는-3가지)
-  - [2.3. Reflection 이용](#23-reflection-이용)
-    - [2.3.1. 예시 객체](#231-예시-객체)
-    - [2.3.2. 인스턴스 생성](#232-인스턴스-생성)
-    - [2.3.3. 메소드 실행](#233-메소드-실행)
-  - [2.4. 요약](#24-요약)
-  - [2.5. 선생님](#25-선생님)
+# Reflection
 
-
-# 2. Reflection
-
-## 2.1. Java Reflection 정의
+## Java Reflection 정의
 
 ---
 
@@ -23,7 +10,7 @@
 > **런타임에 클래스의 동작을 검사, 조작할 때 사용되는 프로세스**
 > 
 
-## 2.2. `Java.lang.Class` 가져오는 3가지
+## `Java.lang.Class` 가져오는 3가지
 
 ---
 
@@ -64,11 +51,11 @@
     ⇒ 예외처리 강제
     
 
-## 2.3. Reflection 이용
+## Reflection 이용
 
 ---
 
-### 2.3.1. 예시 객체
+### 예시 객체
 
 ---
 
@@ -86,7 +73,7 @@ public class Human {
 }
 ```
 
-### 2.3.2. 인스턴스 생성
+### 인스턴스 생성
 
 ---
 
@@ -109,7 +96,7 @@ public static void main(String[] args) throws Exception {
     }
 ```
 
-### 2.3.3. 메소드 실행
+### 메소드 실행
 
 ---
 
@@ -126,7 +113,7 @@ int rslt2 = (int) sum2.invoke(null, 3,5); //instance 지정안해도됨
 System.out.println(rslt2);
 ```
 
-## 2.4. 요약
+## 요약
 
 ---
 
@@ -135,8 +122,6 @@ System.out.println(rslt2);
 - static 메소드가 아닌 경우 `invoke()`의 첫번째 인자는 인스턴스
 - 생성자나 메소드를 찾지 못하면 NoSuchMethodException 발생
 
-## 2.5. 선생님
-
+## 선생님
 ---
-
 [https://velog.io/@dev_leewoooo/Reflection이란](https://velog.io/@dev_leewoooo/Reflection%EC%9D%B4%EB%9E%80)
