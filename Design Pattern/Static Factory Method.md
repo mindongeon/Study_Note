@@ -137,6 +137,43 @@ public class Level {
 ```
 시험 점수에 따라 결정되는 하위 등급 타입을 반환하는 정적 팩토리 메소드를 만들면, 분기처리를 통해 하위 타입의 객체를 반환할 수 있다.
 
-## 객체 생성을 [캡슐화](/Java/%EC%BA%A1%EC%8A%90%ED%99%94%2C%20%EC%83%81%EC%86%8D%2C%20%EB%8B%A4%ED%98%95%EC%84%B1%2C%20%EC%B6%94%EC%83%81%ED%99%94.md) 할 수 있다.
+## 객체 생성을 [캡슐화](/Java/%EC%BA%A1%EC%8A%90%ED%99%94.md) 할 수 있다.
 ---
 정적 팩토리 메소드는 객체 생성을 캡슐화하는 방법이기도 하다.
+
+### 예시
+---
+DTO와 Entity간에는 자유로운 형변환이 가능해야 하는데, 정적 팩토리 메소드를 사용하면 내부 구현을 모르더라도 쉽게 변환할 수 있다.
+
+```java
+public class CarDto {
+  private String name;
+  private int position;
+
+  pulbic static CarDto from(Car car) {
+    return new CarDto(car.getName(), car.getPosition());
+  }
+}
+
+
+// Car -> CatDto 로 변환
+CarDto carDto = CarDto.from(car);
+```
+만약 정적 팩토리 메소드를 사용하지 않고 DTO로 변환하려면 외부에서 생성자의 내부 구현을 모두 드러낸 채로 해야한다.
+```java
+Car carDto = CarDto.from(car); // 정적 팩토리 메서드를 쓴 경우
+CarDto carDto = new CarDto(car.getName(), car.getPosition); // 생성자를 쓴 경우
+```
+단순히 생성자의 역할을 대신하는 것 뿐만 아니라, 가독성 좋은 코드를 작성하고 객체지향적 프로그래밍을 하도록 도와준다. 
+
+>도메인에서 "객체 생성"의 역할 자체가 중요한 경우 정적 팩토리 클래스를 따로 분리하는 것도 좋은 방법이다. 다만 팩토리 메소드만 존재하는 클래스를 생성할 경우 상속이 불가능하다.
+
+## 정적 팩토리 메소드 네이밍 컨벤션
+---
+- `from` : 하나의 매개 변수를 받아서 객체를 생성
+- `of` : 여러개의 매개 변수를 받아서 객체를 생성
+- `getInstance` | `instance` : 인스턴스를 생성. 이전에 반환했던 것과 같을 수 있음.
+- `newInstance` | `create` : 새로운 인스턴스를 생성
+- `get[OtherType]` : 다른 타입의 인스턴스를 생성. 이전에 반환했던 것과 같을 수 있음.
+- `new[OtherType]` : 다른 타입의 새로운 인스턴스를 생성.
+
