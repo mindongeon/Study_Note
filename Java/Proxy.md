@@ -3,8 +3,7 @@
 - [1. 목차](#1-목차)
 - [2. Proxy](#2-proxy)
   - [2.1. Proxy란](#21-proxy란)
-  - [2.2. Proxy Pattern](#22-proxy-pattern)
-    - [2.2.1. 특징](#221-특징)
+  - [2.2. Proxy Pattern](/Design%20Pattern/Proxy%20Pattern.md)
   - [2.3. 예시](#23-예시)
     - [2.3.1. VO](#231-vo)
     - [2.3.2. Subject](#232-subject)
@@ -26,24 +25,7 @@
 그 이외 **부가 기능을 제공, 접근 제어 역할은 Proxy 객체에 위임**
 - SOLID 중 SRP를 지향하는 코드로 작성 가능
 
-## 2.2. Proxy Pattern
-
----
-
-Client는 Interface “SubJect”를 의존하고 있고,
-
-해당 Interface를 Proxy와 RealSubject가 구현
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a986fdc9-83a8-49da-b9f3-0285e431eafb/Untitled.png)
-
-### 2.2.1. 특징
-
----
-
-- RealSubject 와 같은 이름의 메서드를 구현
-- RealSubject 에 대한 참조 변수 가짐
-- RealSubject 의 메소드를 호출, 그 결과를 클라이언트에게 반환
-- RealSubject 메서드의 호출 전, 후에 별도의 로직 수행 가능
+## 2.2. [Proxy Pattern](/Design%20Pattern/Proxy%20Pattern.md)
 
 ## 2.3. 예시
 
@@ -126,7 +108,7 @@ Proxy에 접근 제어, 부가 기능을 추가하여 사용
 - 직접 Proxy를 구현, 작성하면 번거롭고 이 후 확장 시
 많은 제약조건, 중복 코드 발생
 
-⇒ 개선하고자 [Dynamic Proxy](https://www.notion.so/Dynamic-Proxy-d96ef273bad64fe39bbf7fc60260be5b) 라는 기술이 도입됨
+⇒ 개선하고자 [Dynamic Proxy](/Java/Dynamic%20Proxy.md) 라는 기술이 도입됨
 
 ### 2.4.1. 선생님
 

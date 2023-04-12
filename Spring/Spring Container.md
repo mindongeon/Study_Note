@@ -34,5 +34,5 @@
     2. XML + Componet → @Component,@Service …
     3. JAVA config → @Configuration
 3. bean scope
-    1. singletone : 같은 객체 주소값으로 나감
+    1. singleton : 같은 객체 주소값으로 나감
     2. prototype : 같은 객체지만 주소값 다르게  나감

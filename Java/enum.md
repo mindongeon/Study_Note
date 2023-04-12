@@ -105,10 +105,10 @@ class Unit {
 
 | Method | Description |
 | --- | --- |
-| Class<E> getDeclaringClass() | 열거형의 Class객체를 반환한다. |
+| Class<E\> getDeclaringClass() | 열거형의 Class객체를 반환한다. |
 | String name() | 열거형 상수의 이름을 문자열로 반환한다. |
 | int ordinal() | 열거형 상수가 정의된 순서를 반환한다. ( 0부터 시작 ) |
-| T valueOf(Class<T> enumType, String name) | 지정된 열거형에서 name과 일치하는 열거형 상수를 반환한다. |
+| T valueOf(Class<T\> enumType, String name) | 지정된 열거형에서 name과 일치하는 열거형 상수를 반환한다. |
 
 `ordinal()`은 모든 열거형의 조상인 `java.lang.Enum`클래스에 정의된 것으로, 정의된 순서를 정수로 반환한다.
 

@@ -50,8 +50,8 @@ function 생략시 생성자가 만들어지지 않음
 const a = new obj.getName();
 ```
 
-생성자 함수 : prototype, [[prototype]] 을 가지고 있음
+생성자 함수 : prototype, prototype 을 가지고 있음
 
-나머지 : [[prototype]] 만 가지고 있음
+나머지 : prototype 만 가지고 있음
 
-__proto__ = [[prototype]]
+__proto__ = prototype
