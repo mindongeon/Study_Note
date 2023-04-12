@@ -41,7 +41,7 @@ Java의 정석
 | @Deprecated | 앞으로 사용하지 않을 것을 권장하는 대상에 붙인다. |
 | @SuppressWarnings | 컴파일러의 특정 경고메시지가 나타나지 않게 해준다. |
 | @SafeVarargs | 제네릭스 타입의 가변인자에 사용한다. ( JDK 1.7 ) |
-| @FunctionalInterface | 함수형 인터페이스라는 것을 알린다. ( JDK 1.8 ) |
+| @FunctionalInterface | [함수형 인터페이스](/Java/Functional%20Interface.md)라는 것을 알린다. ( JDK 1.8 ) |
 | @Native | native메소드에서 참조되는 상수 앞에 붙인다. |
 
 ## 3.1. Meta Annotation

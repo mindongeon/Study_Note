@@ -44,7 +44,7 @@ Toby Spring
 ---
 
 1. **스프링 웹 프레임워크**
-    1. Spring Servlet / Spring MVC
+    1. Spring Servlet / [Spring MVC](/Spring/Spring%20MVC.md)
         - 스프링이 직접 제공하는 서블릿 기반의 MVC 프레임워크
         - Front Controller 의 역할을 하는
         DispatcherServlet을 핵심으로 사용

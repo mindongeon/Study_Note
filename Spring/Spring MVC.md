@@ -12,7 +12,7 @@
 ## @ControllerAdvice
 
 - 클래스 레벨에서 사용
-- 모든 @Controller에서 발생할 수 있는 Exception 처리
+- 모든 [@Controller](/Spring/%40Controller.md)에서 발생할 수 있는 Exception 처리
 - @ExceptionHandler와 함께 사용
 - @RestControllerAdvice = @ControllerAdvice + @ResponseBody
 - Exception 발생 시 응답으로 객체를 리턴해야 하는 경우 @RestControllerAdvice 사용
