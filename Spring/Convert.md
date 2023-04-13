@@ -11,7 +11,7 @@
 - [7. 예시 코드](#7-예시-코드)
 	- [7.1. @Before](#71-before)
 	- [7.2. primitive()](#72-primitive)
-	- [7.3. **andExpect( )**](#73-andexpect-)
+	- [7.3. andExpect( )](#73-andexpect-)
 	- [7.4. valueOf()](#74-valueof)
 	- [7.5. custom()](#75-custom)
 
@@ -221,13 +221,13 @@ public interface Parser<T> {
     ```
     
 
-## 7.3. **andExpect( )**
+## 7.3. andExpect( )
 
 ---
 
 **인수에 실행결과를 검증**하는 MockMvcResultMatchers에서 제공하는 ResultMatcher 지정
 
-- status : HTTP 상태 코드 검증
+- status : [HTTP 상태 코드](Http%20Status.md) 검증
 - header : 응답 헤더의 상태 검증
 - cookie : 쿠키 상태 검증
 - content : 응답 본문 내용 검증

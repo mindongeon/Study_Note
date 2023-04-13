@@ -21,7 +21,7 @@
 
 - 메소드 파라미터에 붙일 수 있고, 변수명으로 선언된 값이 항상 Request에 존재해야 함
 - Servlet API가 query parameter, form data 등을 request body에서 하나의 map형태로 변환해 전달해줌
-- 파라미터 타입이 Collection타입이고, 변수명이 같으면 해당 형태로 변환해줌
+- 파라미터 타입이 [Collection](Collection.md)타입이고, 변수명이 같으면 해당 형태로 변환해줌
 - String, int 같은 단순 타입의 경우 생략 가능
 - Form태그에서 method가 POST 전송일 때는 받을 수 있음
 - Map<String, String>으로 받을 경우 모든 request parameter를 받음

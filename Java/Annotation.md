@@ -76,7 +76,7 @@ public @interface SuppressWarnings {String[] value();}
     | --- | --- |
     | ANNOTATION_TYPE | Annotation |
     | CONSTRUCTOR | 생성자 |
-    | FIELD | 필드 ( 멤버변수, enum 상수 ) |
+    | FIELD | 필드 ( 멤버변수, [enum](enum.md) 상수 ) |
     | LOCAL_VARABLE | 지역변수 |
     | METHOD | 메소드 |
     | PACKAGE | 패키지 |

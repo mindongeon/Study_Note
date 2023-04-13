@@ -29,7 +29,7 @@
     
 - `RequestMethod[] method()` : HTTP 요청 메소드
     
-    RequestMethod : HTTP 메소드를 정의한 enum
+    RequestMethod : HTTP 메소드를 정의한 [enum](enum.md)
     
     GET, HEAD, POST, PUT, DELETE, OPTIONS, TRACE
     
