@@ -2,25 +2,6 @@
 
 객체의 인스턴스가 오직 1개만 생성되는 패턴
 
-싱글톤 패턴을 구현하는 방법은 여러가지가 있지만, 객체를 미리 생성해두고 가져오는 가장 단순하고 안전한 방법을 소개한다.
-```java
-public class Singleton {
-    private static Singleton instance = new Singleton();
-
-    private Singleton() {
-        // 생성자는 외부에서 호출하지 못하게 private로 지정한다.
-    }
-
-    public static Singleton getInstance() {
-        return instance;
-    }
-
-    public void say() {
-        System.out.println("hello");
-    }
-}
-```
-
 # 사용하는 이유
 
 ```
@@ -53,6 +34,101 @@ public class Singleton {
 이 외에 자식클래스 생성 불가, 내부 상태 수정이 어렵다는 점 등 여러가지 문제점이 있다.   
 => 싱글톤 패턴은 유연성이 많이 떨어지는 패턴이다.
 
+# 만드는 방법.
+
+## 기존
+---
+### 1. public static final field
+```java
+public class Singleton {
+    public static final Singleton INSTANCE = new Singleton();
+    private Singleton(){};
+}
+```
+### 2. public static factory method
+```java
+public class Singleton {
+    private static final Singleton INSTANCE = new Singleton();
+    private Singleton(){};
+    public static Singleton getInstance(){
+        return INSTANCE;
+    }
+}
+```
+
+### 3. lazy itialization
+```java
+public class Singleton {
+    private static Singleton INSTANCE = null;
+    private Singleton(){};
+    public static Singleton getInstance(){
+        if(INSTANCE == null){
+            synchronized (Singleton.class){
+                if(INSTANCE == null)
+                    INSTANCE = new Singleton();
+            }
+        }
+        return INSTANCE;
+    }
+}
+```
+### 기존 방법의 장단점
+---
+- 코드 블록에서 하는 일이 없어도 private생성자를 만들어야 한다. (기본 생성자가 생성되는 것을 피하기위해) 
+- 2,3번 방법은 api를 변경하지 않고 클래스를 비싱글톤으로 만들 수 있다는 장점이 있다.
+```java
+public static Singleton getInstance() {
+    return new Singleton ();
+}
+```
+- static 필드는 클래스 로딩 시간에 초기화되므로 1,2번 방법은 런타임에 해당 클래스를 사용하지 않아도 싱글톤 인스턴스가 생성된다. (자원 낭비)
+- 3번 방법은 이런 자원 낭비를 막고, 싱글톤 객체에 처음 액세스할 때 인스턴스가 생성된다. 또한 `synchronized` 예약어를 통해 멀티 쓰레드 환경에서 객체가 두 개 이상 생성되지 않도록 막는다.
+
+### 추가적인 문제 - 1. 직렬화와 역직렬화 (Serialization & Deserialization)
+- 클래스를 역직렬화할 때 새로운 인스턴스가 생성되어 싱글톤 속성을 위반한다.
+#### 해결방법
+- 싱글톤 클래스에 readResolve 메소드를 구현한다.
+
+### 추가적인 문제 - 2. 리플렉션 (Reflection)
+- 리플렉션을 이용하면 런타임에 private생성자에 접근하여 새로운 인스턴스를 생성할 수 있다.
+
+## [enum](/Java/enum.md)을 통해 싱글톤 만들기
+```java
+public enum Singleton {
+    INSTANCE;
+}
+```
+- enum 타입은 기본적으로 직렬화 가능하므로 Serializable 인터페이스를 구현할 필요가 없고, [리플렉션](/Java/Reflection.md) 문제도 발생하지 않는다.
+- 인스턴스가 JVM 내에 하나만 존재한다는 것이 100% 보장되므로, Java에서 싱글톤을 만드는 가장 좋은 방법으로 권장된다.
+
+### 사용법
+```java
+public enum SingletonEnum {
+    INSTANCE;
+    int value;
+    
+    public int getValue() {
+        return value;
+    }
+    public void setValue(int value) {
+        this.value = value;
+    }
+}
+public class EnumDemo {
+    
+    public static void main(String[] args) {
+        SingletonEnum singleton = SingletonEnum.INSTANCE;
+        
+        System.out.println(singleton.getValue());
+        singleton.setValue(2);
+        System.out.println(singleton.getValue());
+    }
+}
+```
+
+### 주의 사항
+열거형을 직렬화할 때 필드 변수는 소실된다. 즉, 위 코드에서 value변수는 직렬화되지 않고, 소실된다.
+
 # 결론
 ```
 프레임워크의 도움을 받아 사용하는게 편하지만
@@ -65,3 +141,4 @@ public class Singleton {
 # 출처
 
 [싱글톤 패턴이란?](https://tecoble.techcourse.co.kr/post/2020-11-07-singleton/)
+[Enum과 싱글톤](https://scshim.tistory.com/361)
