@@ -50,7 +50,7 @@ JVM 시작 시 가장 최초로 실행되는 클래스 로더이다. 자바 클�
 `URLClassLoader`를 상속하며, `jre/lib/ext`내 모든 클래스를 로드한다.
 
 ### Java 9 이후
-`Platform Loader`로 변경되었으며, `URLClassLoader`가 아닌 `BuiltinClassLoader`를 상속한다. Inner Static 클래스로 구현되어 있다.
+`Platform Loader`로 변경되었으며, `URLClassLoader`가 아닌 `BuiltinClassLoader`를 상속한다. [Static Nested Class](/Java/Nested%20Class.md)로 구현되어 있다.
 
 ## System Class Loader
 ---
