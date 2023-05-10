@@ -110,11 +110,12 @@
 | value | - **TemporalType.DATE** : 날짜, DB date타입과 매핑 (예: 2013-10-11) <br> - **TemporalType.TIME** : 시간, DB time타입과 매핑 (예: 11:11:11) <br> - **TemporalType.TIMESTAMP** : 날짜와 시간, DB timestamp타입과 매핑 (예: 2013-10-11 11:11:11) |        |
 
 #### `@Lob`
+LOB : Large Of Binary, 매우 큰 데이터, SUBSTR같은 함수 사용불가.
 DB BLOB, CLOB 타입과 매핑
 - `@Lob`에는 지정할 수 있는 속성이 없다.
 - 매핑하는 필드 타입이 문자면 CLOB 매핑, 나머지는 BLOB 매핑
-  - CLOB : String, char[], java.sql.CLOB
-  - BLOB : byte[], java.sql.BLOB
+  - CLOB(문자) : String, char[], java.sql.CLOB
+  - BLOB(파일) : byte[], java.sql.BLOB
 
 #### `@Transient`
 - 필드 매핑X
@@ -240,6 +241,8 @@ public class Member {
 - 미래까지 이 조건을 만족하는 자연키는 찾기 어렵다. 대리키(대체키)를 사용하자.
 - 예를 들어 주민등록번호도 기본키로 적절하지 않다.
 - **권장 : Long형 + 대체키 + 키 생성전략 사용**
+
+## 도메인 : 업무 지식
 
 ## 데이터 중심 설계의 문제점
 - 테이블 설계에 맞춘 방식
