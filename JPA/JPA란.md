@@ -167,3 +167,8 @@ String teamName = team.getName();
 Member member = memberDAO.find(memberId);
 Team team = member.getTeam();
 String teamName = team.getName(); 
+```
+
+## 출처
+---
+자바 ORM 표준 JPA 프로그래밍

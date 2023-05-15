@@ -214,3 +214,8 @@ List<Member> members = query.getResultList();
 - `em.detach(entity)` : 특정 엔티티만 준영속 상태로 전환
 - `em.clear()` : 영속성 컨텍스트를 완전히 초기화
 - `em.close()` : 영속성 컨텍스트를 종료
+
+
+## 출처
+---
+자바 ORM 표준 JPA 프로그래밍

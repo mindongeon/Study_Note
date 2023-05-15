@@ -187,3 +187,7 @@ public class JpaMain {
 - **JPQL은 엔티티 객체**를 대상으로 쿼리
 - **SQL은 DB 테이블**을 대상으로 쿼리
 - SQL을 추상화해서 특정 DB SQL에 의존하지 않는다.
+
+## 출처
+---
+자바 ORM 표준 JPA 프로그래밍
