@@ -118,7 +118,57 @@ tx.commit();
   - ex) `toString()`,lombok, JSON 생성 라이브러리
 - Entity는 entity로만, 프론트로 보낼 시 DTO, VO 사용
 
-## 연관관계 편의 메서드 -----------------------------
+## 연관관계 편의 메서드
+
+### 연관관계 편의 메서드 사용하지 않을 시
+`member.setteam(team)`과 `team.getMembers().add(member)`를 각각 호출해야 한다.
+
+### 연관관계 편의 메서드 사용 시
+```java
+public void setTeam(Team team) {
+    this.team = team;
+    team.getMembers().add(this);
+}
+```
+
+```java
+Team t1 = new Team("team1", "팀"1);
+em.persist(t1);
+
+Member m1 = new Member("member1", "회원1");
+m1.setTeam(t1); // 양방향 설정 완료
+em.persist(m1);
+```
+
+### 양방향 연관관계는 결국 양쪽 다 신경을 써야 한다.
+
+### 주의사항
+`setTeam(team)` 메소드에는 버그가 있다.
+```java
+m1.setTeam(teamA);
+m1.setTeam(teamB);
+Member findMember = teamA.getMember(); // member1이 여전히 조회된다.
+```
+`m1.setTeam(teamA)` 호출 직후는 아래와 같은 상태이다.
+![img1](/img/association_mapping_1.PNG)
+
+이후에 `m1.setTeam(teamB)` 호출 직후는 아래와 같은 상태이다.
+![img2](/img/association_mapping_2.PNG)
+
+teamB로 변경해도 여전히 teamA -> member1 관계는 유지되어 있다. 이 때문에 연관관계를 변경할 때는 기존 관계를 삭제하는 코드도 추가해주어야 한다.
+
+```java
+public void setTeam(Team team) {
+
+  // 기존 관계 제거
+  if (this.team != null) {
+    this.team.getMembers().remove(this);
+  }
+
+  this.team = team;
+  team.getMembers().add(this);
+}
+```
 
 # 양방향 매핑 정리
 - 단방향 매핑만으로도 이미 연관관계 매핑은 완료
