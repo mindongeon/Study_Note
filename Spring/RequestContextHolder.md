@@ -4,7 +4,7 @@
 ---
 `RequestContextHolder`는 Spring에서 전역으로 Request에 대한 정보를 가져오고자 할 때 사용하는 유틸성 클래스이다.
 
-주로 [Controller](/Spring/Controller.md)외의 Business Layer 등에서 Request 객체를 참고하려할 때 사용한다. 매번 method의 call param으로 넘기기 애매할 때 주로 사용한다.
+주로 [Controller](/Books/Toby의%20Spring/Controller.md)외의 Business Layer 등에서 Request 객체를 참고하려할 때 사용한다. 매번 method의 call param으로 넘기기 애매할 때 주로 사용한다.
 
 ## 사용
 ---

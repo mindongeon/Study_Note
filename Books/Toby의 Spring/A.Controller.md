@@ -36,7 +36,7 @@
 
 컨트롤러 선언 [어노테이션](/Java/Annotation.md)
 
-DefaultAnnotationHandlerMapping : [컨트롤러](/Spring/Controller.md) 빈의 메소드에 매핑
+DefaultAnnotationHandlerMapping : [컨트롤러](/Books/Toby의%20Spring/Controller.md) 빈의 메소드에 매핑
 
 AnnotationMethodHandlerAdapter : 매핑된 메소드를 호출
 
@@ -238,7 +238,7 @@ public String add(@ModelAttribue User user,
 **ModelAndView**
 
 - 컨트롤러가 리턴해야 하는 정보를 담고 있는 가장 대표적인 타입
-- [`@Controller`](/Spring/A.Controller.md)에서는 다른 편리한 방법이 많아 자주 사용되지는 않음
+- [`@Controller`](/Books/Toby의%20Spring/A.Controller.md.Controller.md)에서는 다른 편리한 방법이 많아 자주 사용되지는 않음
 - Map/Model/ModelMap, `@ModelAttribute`메소드가 리넡하는 모델에 자동 추가됨
 
 ---
